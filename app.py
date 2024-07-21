@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = False
+app.config["DEBUG"] = True
 
 books = [
     {'id': 0,
@@ -151,7 +151,7 @@ def api_search():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(DEBUG=True)
 # if __name__ == '__main__':
 #    app.run(port=5000)
 
