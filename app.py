@@ -4,7 +4,6 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from concurrent.futures import ThreadPoolExecutor
 import time
 
 app = flask.Flask(__name__)
