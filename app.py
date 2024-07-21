@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from concurrent.futures import ThreadPoolExecutor
 import time
 
 app = flask.Flask(__name__)
@@ -114,7 +115,7 @@ def api_search():
 
     jobs = []
 
-    for x in range(0, 6):
+    for x in range(0, 3):
         # baseurl = f"https://www.indeed.com/jobs?q={search}&start={x*10}&fromage=3"
         baseurl = f"https://uk.indeed.com/jobs?q={search}&start={x*10}&fromage=3"
         driver.get(baseurl)
@@ -150,7 +151,7 @@ def api_search():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 # if __name__ == '__main__':
 #    app.run(port=5000)
 
